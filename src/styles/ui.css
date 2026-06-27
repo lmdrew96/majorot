@@ -289,6 +289,23 @@
   font-weight: 600;
   line-height: 1.2;
 }
+.mj-card__keywords {
+  font-family: var(--mj-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--mj-ink-faint);
+  max-width: 96%;
+}
+.mj-card.is-reversed .mj-card__keywords {
+  color: rgba(199, 122, 196, 0.78); /* plum-tinted, kept legible */
+}
+.mj-card.sz-sm .mj-card__keywords {
+  display: none;
+}
+.mj-card.sz-lg .mj-card__keywords {
+  font-size: 0.66rem;
+}
 .mj-card__orient {
   font-family: var(--mj-font-mono);
   font-size: 0.62rem;
