@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap");
+@import "./tokens.css";
+
+/* --- Reset --------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--mj-bg);
+  color: var(--mj-ink);
+  font-family: var(--mj-font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* A faint, slow vignette + grain-free aurora to keep the dark from feeling flat */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 15% -10%, rgba(127, 0, 117, 0.18), transparent 60%),
+    radial-gradient(120% 80% at 100% 0%, rgba(6, 103, 72, 0.16), transparent 55%),
+    radial-gradient(140% 100% at 50% 120%, rgba(102, 107, 255, 0.12), transparent 60%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--mj-font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: none;
+  box-shadow: var(--mj-ring);
+}
+
+textarea,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--mj-accent);
+  color: var(--mj-on-accent);
+}
+
+/* --- Shared primitives --------------------------------------------------- */
+.mj-app {
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.mj-shell {
+  width: 100%;
+  max-width: var(--mj-maxw);
+  margin-inline: auto;
+  padding: var(--mj-space-5) var(--mj-space-4) var(--mj-space-8);
+}
+
+.mj-panel {
+  background: var(--mj-surface);
+  border: 1px solid var(--mj-line);
+  border-radius: var(--mj-radius);
+  box-shadow: var(--mj-shadow);
+}
+
+/* Primary action — Neon Ultramarine */
+.mj-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mj-space-2);
+  padding: var(--mj-space-3) var(--mj-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--mj-radius);
+  background: var(--mj-accent);
+  color: var(--mj-on-accent);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  transition: background 120ms ease, transform 80ms ease;
+}
+.mj-btn:hover {
+  background: var(--mj-accent-hover);
+}
+.mj-btn:active {
+  background: var(--mj-accent-press);
+  transform: translateY(1px);
+}
+.mj-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Quiet / secondary action */
+.mj-btn--ghost {
+  background: transparent;
+  color: var(--mj-ink);
+  border-color: var(--mj-line-strong);
+}
+.mj-btn--ghost:hover {
+  background: var(--mj-surface-2);
+}
+.mj-btn--ghost:active {
+  background: var(--mj-surface-3);
+}
+
+.mj-eyebrow {
+  font-family: var(--mj-font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mj-ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,76 @@
+/* ============================================================================
+ * THE MAJOROT — Design Tokens
+ * ----------------------------------------------------------------------------
+ * Palette (Nae's, 2026-06-27). The game's core duality maps onto the brand:
+ *   Twilight Jade  = upright / restorative / gain
+ *   Plum Whisper   = reversed / wound / the witchy undertow
+ *   Neon Ultramarine = interactive (Draw, buttons, links)
+ *   Chestnut Wash  = the ground (page + panels)
+ *   Amber (brand)  = the Self-bar threshold marker only
+ * ========================================================================== */
+:root {
+  /* --- Raw palette -------------------------------------------------------- */
+  --mj-chestnut: #322d00;
+  --mj-jade: #066748;
+  --mj-plum: #7f0075;
+  --mj-ultramarine: #666bff;
+  --mj-amber: #dfa649;
+
+  /* --- Surfaces (warm dark, derived from Chestnut Wash) ------------------- */
+  --mj-bg: #14120a; /* deep warm near-black — the page */
+  --mj-surface: #221e08; /* raised panel */
+  --mj-surface-2: #322d00; /* Chestnut Wash — cards, elevated */
+  --mj-surface-3: #423b0c; /* hover / highest */
+  --mj-line: rgba(244, 239, 224, 0.12); /* hairline borders */
+  --mj-line-strong: rgba(244, 239, 224, 0.22);
+
+  /* --- Ink ---------------------------------------------------------------- */
+  --mj-ink: #f4efe0; /* warm cream — primary text */
+  --mj-ink-dim: #c4bca4; /* secondary */
+  --mj-ink-faint: rgba(244, 239, 224, 0.5); /* captions, hints */
+
+  /* --- Interactive (Neon Ultramarine) ------------------------------------ */
+  --mj-accent: var(--mj-ultramarine);
+  --mj-accent-hover: #7e83ff;
+  --mj-accent-press: #545ae6;
+  --mj-on-accent: #12112a; /* dark ink on bright ultramarine */
+
+  /* --- Semantic ----------------------------------------------------------- */
+  --mj-upright: var(--mj-jade); /* upright cards, Self gain, restore */
+  --mj-upright-soft: rgba(6, 103, 72, 0.18);
+  --mj-reversed: var(--mj-plum); /* reversed cards, Wounds, debts */
+  --mj-reversed-soft: rgba(127, 0, 117, 0.2);
+  --mj-self: #2f9e6e; /* Self meter fill (vital jade, lifted for contrast) */
+  --mj-self-track: rgba(47, 158, 110, 0.16);
+  --mj-spark: var(--mj-ultramarine); /* Spark pips (magic energy) */
+  --mj-spark-empty: rgba(102, 107, 255, 0.22);
+  --mj-threshold: var(--mj-amber); /* the gold line on the Self bar */
+  --mj-danger: #e0596b; /* Ruin / hard loss */
+
+  /* --- Type (ADHDesigns brand faces, system fallbacks for offline) -------- */
+  --mj-font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino,
+    Georgia, serif; /* headings + the journal — the literary voice */
+  --mj-font-serif: var(--mj-font-display);
+  --mj-font-sans: "Space Grotesk", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* UI chrome */
+  --mj-font-mono: "Geist Mono", ui-monospace, "SF Mono", "Cascadia Code",
+    monospace; /* labels, counts, formulas */
+
+  /* --- Shape & depth ------------------------------------------------------ */
+  --mj-radius-sm: 8px;
+  --mj-radius: 14px;
+  --mj-radius-lg: 22px;
+  --mj-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  --mj-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+  --mj-ring: 0 0 0 2px var(--mj-bg), 0 0 0 4px var(--mj-accent);
+
+  /* --- Rhythm ------------------------------------------------------------- */
+  --mj-space-1: 4px;
+  --mj-space-2: 8px;
+  --mj-space-3: 12px;
+  --mj-space-4: 16px;
+  --mj-space-5: 24px;
+  --mj-space-6: 32px;
+  --mj-space-8: 48px;
+  --mj-maxw: 720px; /* reading column — the journal stays book-width */
+}
