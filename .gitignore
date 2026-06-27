@@ -4,9 +4,11 @@ dist-ssr
 *.local
 .DS_Store
 .vite
+.vercel
 
 # Editor
 .idea/
 *.log
 npm-debug.log*
 pnpm-debug.log*
+.env*
